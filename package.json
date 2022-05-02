@@ -14,16 +14,23 @@
     "*.{js,vue}": "eslint"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.1.1",
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "@fortawesome/vue-fontawesome": "^2.0.6",
+    "@toast-ui/vue-editor": "^3.1.5",
     "body-parser": "^1.19.0",
     "copy-to-clipboard": "^3.3.1",
     "cross-env": "^7.0.3",
     "element-ui": "^2.13.0",
+    "fontawesome-free": "^1.0.4",
     "jsdom": "^16.4.0",
     "mavon-editor": "^2.9.1",
     "nuxt": "2.14.12",
     "request": "^2.88.2",
     "turndown": "^7.0.0",
-    "turndown-plugin-gfm": "^1.0.2"
+    "turndown-plugin-gfm": "^1.0.2",
+    "vue-simple-icons": "^4.7.0"
   },
   "devDependencies": {
     "@babel/core": "7.9.0",

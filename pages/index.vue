@@ -1,13 +1,9 @@
-<template>
+/<template>
   <client-only>
     <div class="html2md-box">
       <div class="title-view">
-        <a href="https://www.helloworld.net" target="_blank">
-          <img width="100" src="/img/logo.svg">
-        </a>
         <div>
-          <h1 class="h1">html 转 md</h1>
-          <h3 class="h3">支持 csdn、掘金、简书、segmentfault、cnblogs、oschina、微信文章</h3>
+          <h1 class="h1"><img src="https://ico.vercel.app/html5/000" width="40" alt="html"> ➔ <img src="https://ico.vercel.app/markdown/000" width="60" alt="markdown"></h1>
         </div>
         <a href="https://github.com/helloworld-Co/html2md" target="_blank">
           <img width="40" src="/img/github.svg">
@@ -20,21 +16,23 @@
           @focus="getInputFocus($event)"
           v-model="url"
           size="small"
-          placeholder="请输入文章地址" />
+          placeholder="https://" />
         <div>&nbsp;</div>
         <el-button
           @click="transformUrl"
           :loading="isLoading"
           size="small"
           type="primary"
-        >👉一键转换</el-button>
+          class="newButton"
+        >URL ➔ <markdown-icon class="newButton svgIcon"></markdown-icon>
+        </el-button>
       </div>
       <br/>
       <el-input
         @focus="getInputFocus($event)"
         v-model="title"
         size="small"
-        placeholder="标题（自动读取）" />
+        placeholder="Page Title..." />
       <br/>
 
       <div class="input-box">
@@ -47,11 +45,17 @@
 import TurndownService from 'turndown'
 import { gfm, tables, strikethrough } from 'turndown-plugin-gfm'
 
+import { MarkdownIcon } from 'vue-simple-icons'
+
 export default {
   name: 'Html2mdBox',
+  components: {
+    MarkdownIcon
+  },
   data () {
     return {
-      html: '<pre>Hello world!<br/>换行了</pre>',
+      html: '<pre>Hello world!<br/>🚀🌎💩</pre>',
+      // html: markdownSyntax,
       url: '',
       isLoading: false,
       title: ''
@@ -122,9 +126,22 @@ export default {
     }
   }
 }
+
 </script>
 
 <style lang="scss">
+  .svgIcon {
+  filter: invert(100%) sepia(2%) saturate(1760%) hue-rotate(179deg) brightness(99%) contrast(106%);
+  color: white;
+  }
+  .title-view {
+  padding-top: 1em;
+}
+  .newButton {
+  display: inline-block;
+  vertical-align: middle;
+  font-weight: bold;
+  }
   .html2md-box{
     height: 100vh;
     padding: 0 30px;
@@ -134,6 +151,7 @@ export default {
       align-items: center;
       justify-content: space-between;
       padding-bottom: 10px;
+      padding-top: 10px;
       .h1{
         text-align: center;
         font-size: 30px;

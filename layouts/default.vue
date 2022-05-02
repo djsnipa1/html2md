@@ -26,4 +26,5 @@ export default {
   *:after {
     box-sizing: border-box;
   }
+
 </style>
